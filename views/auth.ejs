@@ -1,0 +1,42 @@
+<%- include('header') %>
+
+<div id="box-form">
+    <h3>S'enregistrer</h3>
+    <form action="/auth/add-user" method="post">
+        <div class="label-content">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="label-content">
+            <label for="pseudo">pseudo</label>
+            <input type="pseudo" name="pseudo" id="pseudo" placeholder="pseudo" required>
+        </div>
+        <div class="label-content">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+        <div class="label-content">
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
+</div>
+
+<div id="box-form">
+    <h3>Se connecter</h3>
+    <form action="/auth/login" method="post">
+        <div class="label-content">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="label-content">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+        <div class="label-content">
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
+</div>
+
+
+<%- include('footer') %>

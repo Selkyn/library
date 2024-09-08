@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-contain {
+    display: flex;
+    background-color: brown;
+    width: 80%;
+    height: 500px;
+}
+
+#box-form {
+    display: flex;
+    background-color: rgb(119, 0, 255);
+    margin: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-content{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+}
+
+.accordion-body {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.accordion-item {
+    position: relative;
+}
+.accordion-button::after {
+    margin-left: auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+    vertical-align: middle; /* Centrer le texte verticalement */
+}

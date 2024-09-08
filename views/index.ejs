@@ -1,0 +1,67 @@
+<%- include('header') %>
+
+    
+    <div id="box-form">
+        <form action="/livres/add-livre" method="post">
+            <div class="label-content">
+                <label for="titre">Titre</label>
+                <input type="text" name="titre" id="titre" placeholder="titre" required>
+            </div>
+            <div class="label-content">
+                <label for="annee-publication">Année de publication</label>
+                <input type="number" name="anneePublication" id="annee-publication" placeholder="Année de publication" required>
+            </div>
+            
+            <!-- Accordéon pour les genres -->
+            <div class="accordion mt-3" id="accordionGenres">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingGenres">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGenres" aria-expanded="false" aria-controls="collapseGenres">
+                            Genres
+                        </button>
+                    </h2>
+                    <div id="collapseGenres" class="accordion-collapse collapse" aria-labelledby="headingGenres" data-bs-parent="#accordionGenres">
+                        <div class="accordion-body">
+                            <% genres.forEach(genre => { %>
+                                <label>
+                                    <input type="checkbox" name="genres" value="<%= genre.ID_Genre %>"> <%= genre.name %>
+                                </label><br>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="label-content">
+                <label for="auteurs">Auteur</label>
+                <select name="auteurs" id="auteurs" required>
+                    <% auteurs.forEach(auteur => { %>
+                        <option value="<%= auteur.ID_Auteur %>"><%= auteur.Nom %></option>
+                    <% }) %>
+                </select>
+            </div>
+            
+            <input class="btn" type="submit" value="Envoyer">
+        </form>
+    </div>
+
+        <div id="box-form">
+            <form action="/auteurs/add-auteur" method="post">
+                <div class="label-content">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="nom" required>
+                </div>
+                <div class="label-content">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="prenom"required>
+                </div>
+                <div class="label-content">
+                    <label for="nationalité">Nationalité</label>
+                    <input type="text" name="nationalite" id="nationalite" placeholder="Nationalité" required>
+                </div>
+                <input class="btn" type="submit" value="Envoyer">
+            </form>
+        </div>
+    </div>
+
+    <%- include('footer') %>
